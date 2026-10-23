@@ -4,7 +4,7 @@ Denizli peştamalından çizgi ve çivit mavisi: randevu formu ilk ekranda, fiya
 
 Demo: https://anbarci.github.io/masaj-salonu-c-pestamal/
 
-Üç yönün karşılaştırması: https://anbarci.github.io/masaj-salonu-demolar/
+Bütün yönlerin karşılaştırması: https://anbarci.github.io/masaj-salonu-demolar/
 
 Tek sayfa, statik HTML. İşlevler:
 

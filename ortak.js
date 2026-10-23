@@ -5,7 +5,18 @@
   document.querySelectorAll('form[data-randevu]').forEach(form => {
     const cikti = form.querySelector('[data-mesaj]') || document.querySelector('[data-mesaj]');
     const gonder = form.querySelector('[data-gonder]') || document.querySelector('[data-gonder]');
+    const cumle = form.querySelector('[data-cumle]');
     const yenile = () => {
+      if (cumle) {
+        const metin = [...cumle.childNodes].map(n => {
+          if (n.nodeType === 3) return n.textContent;
+          const el = n.matches('select,input') ? n : n.querySelector('select,input');
+          return el ? el.value : n.textContent;
+        }).join('').replace(/\s+/g, ' ').trim();
+        if (cikti) cikti.textContent = metin;
+        gonder.href = 'https://wa.me/' + NO + '?text=' + encodeURIComponent(metin);
+        return;
+      }
       const satir = ['Merhaba, randevu almak istiyorum.'];
       for (const el of form.elements) {
         if (!el.name) continue;
